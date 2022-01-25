@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
 // Read: Get one listing by id
 // http://localhost:3000/listing/id
 router.get('/:id', (req, res) => {
-	Listing.findById({ id: req.params.id }).then((tool) => {
+	Listing.findById({ _id: req.params.id }).then((tool) => {
 		res.json(tool);
 	});
 });
@@ -31,7 +31,7 @@ router.get('/:id', (req, res) => {
 // Update: Edit a listing by id
 // http://localhost:3000/listing/id
 router.put('/:id', (req, res) => {
-	Listing.findByIdAndUpdate({ id: req.params.id }, req.body, {
+	Listing.findByIdAndUpdate({ _id: req.params.id }, req.body, {
 		new: true,
 	}).then((tool) => {
 		res.json(tool);
@@ -41,7 +41,7 @@ router.put('/:id', (req, res) => {
 // Delete: Remove an listing by id
 // http://localhost:3000/listing/id
 router.delete('/:id', (req, res) => {
-	Listing.findByIdAndDelete({ id: req.params.id }).then((deletedTool) => {
+	Listing.findByIdAndDelete({ _id: req.params.id }).then((deletedTool) => {
 		res.json(deletedTool);
 	});
 });
