@@ -2,6 +2,7 @@ const mongoose = require('../db/connection');
 
 const ListingSchema = new mongoose.Schema({
 	title: String,
+	image: String,
 	description: String,
 	brand: String,
 	model: String,
