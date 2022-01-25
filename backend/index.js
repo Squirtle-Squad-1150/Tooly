@@ -11,7 +11,7 @@ app.use(cors());
 
 // Redirect
 app.get('/', (request, response) => {
-    response.redirect('/listings');
+	response.redirect('/listing');
 });
 
 // Controller
@@ -19,5 +19,5 @@ app.use('/listing', ListingController);
 
 // Forward all requests to localhost:3000/listing to the listing controller
 app.listen(3000, () => {
-    console.log(`Let's get to work 🛠️`);
+	console.log(`Let's get to work 🛠️`);
 });
