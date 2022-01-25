@@ -1,0 +1,12 @@
+.tool {
+	border: 2px solid grey;
+}
+
+.container {
+	padding: 10px;
+}
+
+img {
+	height: 300px;
+	width: 300px;
+}
