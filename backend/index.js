@@ -2,7 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const ListingController = require('./ListingController.');
+const ListingController = require('./ListingController');
 
 // Middleware
 app.use(express.json());
