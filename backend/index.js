@@ -18,6 +18,8 @@ app.get('/', (request, response) => {
 app.use('/listing', ListingController);
 
 // Forward all requests to localhost:3000/listing to the listing controller
-app.listen(3000, () => {
-	console.log(`Let's get to work 🛠️`);
+app.set('port', process.env.PORT || 8000);
+
+app.listen(app.get('port'), () => {
+	console.log(`✅ PORT: ${app.get('port')} 🌟`);
 });
