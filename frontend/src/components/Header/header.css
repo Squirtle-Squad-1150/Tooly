@@ -1,0 +1,29 @@
+.header-nav {
+	background-color: #276074;
+}
+
+ul {
+	padding-right: 30px;
+	list-style-type: none;
+	display: flex;
+}
+
+h1,
+nav {
+	display: flex;
+	color: lightgray;
+	justify-content: space-between;
+}
+
+li {
+	padding: 10px;
+}
+
+a {
+	text-decoration: none;
+	color: lightgray;
+}
+
+.header-nav {
+	padding-left: 20px;
+}

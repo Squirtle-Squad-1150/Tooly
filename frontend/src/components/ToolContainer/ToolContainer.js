@@ -1,11 +1,11 @@
 import React from 'react';
 import ToolCard from '../ToolCard/ToolCard';
-// import { Grid, Container } from '@mui/material';
+import toolContainer from './toolContainer.css';
 import tools from './tools.json';
 
 function ToolContainer(props) {
 	return (
-		<div>
+		<div className='toolContainer'>
 			<ToolCard tools={tools} />
 		</div>
 	);

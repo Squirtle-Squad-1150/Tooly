@@ -16,18 +16,20 @@ function ToolCard({ tools }) {
 		<section className='container'>
 			{tools.map((tool) => (
 				<div className='tool'>
-					<div className='tool-title'>
-						<h3>{tool.title}</h3>
-					</div>
 					<div className='tool-image'>
 						<img src={tool.image} alt={tool.title} />
 					</div>
-					<div className='tool-description'>
-						<p>{tool.description}</p>
+					<div className='tool-location'>
+						<p>📍 {tool.location}</p>
 					</div>
-					<div>
-						<button>Update</button>
-						<button>Reserve</button>
+					<div className='tool-title'>
+						<h3>
+							{tool.title} ({tool.brand})
+						</h3>
+					</div>
+					<div className='cardBtns'>
+						<button className='updateBtn'>Update</button>
+						<button className='reserveBtn'>Reserve</button>
 					</div>
 				</div>
 			))}
