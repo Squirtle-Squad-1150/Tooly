@@ -11,10 +11,11 @@ function UpdateTool(props) {
 		cordless: Boolean,
 		available: Boolean,
 		location: '',
-		price: null,
+		price: Number,
 		description: '',
 	};
 	const [formData, setFormData] = useState(defaultData);
+	
 
 	function handleSubmit(event) {
 		event.preventDefault();
@@ -22,6 +23,11 @@ function UpdateTool(props) {
 		setFormData(defaultData);
 		console.log(formData);
 	}
+
+	function resetRadios () {
+
+	}
+
 	return (
 		<div>
 			<h2>Update My Listing</h2>
@@ -32,6 +38,7 @@ function UpdateTool(props) {
 						<select
 							id='tool'
 							name='tool'
+							value={formData.tool}
 							onChange={(event) =>
 								setFormData({ ...formData, tool: event.target.value })
 							}>
@@ -57,6 +64,7 @@ function UpdateTool(props) {
 						<input
 							id='model'
 							type='text'
+							value={formData.model}
 							onChange={(event) =>
 								setFormData({ ...formData, model: event.target.value })
 							}></input>
@@ -66,6 +74,7 @@ function UpdateTool(props) {
 						<input
 							id='category'
 							type='text'
+							value={formData.category}
 							onChange={(event) =>
 								setFormData({ ...formData, category: event.target.value })
 							}></input>
@@ -78,6 +87,9 @@ function UpdateTool(props) {
 							type='radio'
 							name='condition'
 							value='new'
+							// Learned how to reset radio buttons on form submit from
+							//https://surajsharma.net/blog/react-handle-radio-buttons
+							checked={formData.condition === 'new'}
 							onChange={(event) =>
 								setFormData({ ...formData, condition: event.target.value })
 							}></input>
@@ -87,6 +99,7 @@ function UpdateTool(props) {
 							type='radio'
 							name='condition'
 							value='used'
+							checked={formData.condition === 'used'}
 							onChange={(event) =>
 								setFormData({ ...formData, condition: event.target.value })
 							}></input>
@@ -99,6 +112,7 @@ function UpdateTool(props) {
 							type='radio'
 							name='cordless'
 							value='true'
+							checked={formData.cordless === 'true'}
 							onChange={(event) =>
 								setFormData({ ...formData, cordless: event.target.value })
 							}></input>
@@ -108,6 +122,7 @@ function UpdateTool(props) {
 							type='radio'
 							name='cordless'
 							value='false'
+							checked={formData.cordless === 'false'}
 							onChange={(event) =>
 								setFormData({ ...formData, cordless: event.target.value })
 							}></input>
@@ -120,6 +135,7 @@ function UpdateTool(props) {
 							type='radio'
 							name='available'
 							value='true'
+							checked={formData.available === 'true'}
 							onChange={(event) =>
 								setFormData({ ...formData, available: event.target.value })
 							}></input>
@@ -128,7 +144,8 @@ function UpdateTool(props) {
 							id='available-no'
 							type='radio'
 							name='available'
-							value='false'
+							value= 'false'
+							checked={formData.available === 'false'}
 							onChange={(event) =>
 								setFormData({ ...formData, available: event.target.value })
 							}></input>
@@ -138,6 +155,7 @@ function UpdateTool(props) {
 						<input
 							id='location'
 							type='text'
+							value={formData.location}
 							onChange={(event) =>
 								setFormData({ ...formData, location: event.target.value })
 							}></input>
@@ -148,6 +166,7 @@ function UpdateTool(props) {
 							id='price'
 							type='number'
 							min='1'
+							value={formData.price}
 							onChange={(event) =>
 								setFormData({ ...formData, price: event.target.value })
 							}></input>
@@ -158,6 +177,7 @@ function UpdateTool(props) {
 							id='description'
 							rows='5'
 							cols='40'
+							value={formData.description}
 							onChange={(event) =>
 								setFormData({ ...formData, description: event.target.value })
 							}></textarea>
