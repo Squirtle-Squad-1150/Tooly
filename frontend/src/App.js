@@ -1,9 +1,9 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import ToolContainer from './components/ToolContainer';
-import ToolCard from './components/ToolCard';
-import Header from './components/Header';
-import AddListing from './components/AddListing';
+import ToolContainer from './components/ToolContainer/ToolContainer';
+import ToolCard from './components/ToolCard/ToolCard';
+import Header from './components/Header/Header';
+import AddListing from './components/AddListing/AddListing';
 
 function App() {
 	return (
