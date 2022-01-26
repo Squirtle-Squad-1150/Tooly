@@ -19,7 +19,8 @@ function UpdateTool(props) {
 	function handleSubmit(event) {
 		event.preventDefault();
 		console.log(formData);
-		// setFormData(defaultData);
+		setFormData(defaultData);
+		console.log(formData);
 	}
 	return (
 		<div>
@@ -46,6 +47,7 @@ function UpdateTool(props) {
 						<input
 							id='brand'
 							type='text'
+							value={formData.brand}
 							onChange={(event) =>
 								setFormData({ ...formData, brand: event.target.value })
 							}></input>
@@ -73,7 +75,8 @@ function UpdateTool(props) {
 						<label htmlFor='new'>New </label>
 						<input
 							id='new'
-							type='checkbox'
+							type='radio'
+							name='condition'
 							value='new'
 							onChange={(event) =>
 								setFormData({ ...formData, condition: event.target.value })
@@ -81,7 +84,8 @@ function UpdateTool(props) {
 						<label htmlFor='used'>Used </label>
 						<input
 							id='used'
-							type='checkbox'
+							type='radio'
+							name='condition'
 							value='used'
 							onChange={(event) =>
 								setFormData({ ...formData, condition: event.target.value })
@@ -92,7 +96,8 @@ function UpdateTool(props) {
 						<label htmlFor='yes'>Yes </label>
 						<input
 							id='yes'
-							type='checkbox'
+							type='radio'
+							name='cordless'
 							value='true'
 							onChange={(event) =>
 								setFormData({ ...formData, cordless: event.target.value })
@@ -100,7 +105,8 @@ function UpdateTool(props) {
 						<label htmlFor='no'> No </label>
 						<input
 							id='no'
-							type='checkbox'
+							type='radio'
+							name='cordless'
 							value='false'
 							onChange={(event) =>
 								setFormData({ ...formData, cordless: event.target.value })
@@ -111,7 +117,8 @@ function UpdateTool(props) {
 						<label htmlFor='available-yes'>Yes </label>
 						<input
 							id='avaiable-yes'
-							type='checkbox'
+							type='radio'
+							name='available'
 							value='true'
 							onChange={(event) =>
 								setFormData({ ...formData, available: event.target.value })
@@ -119,7 +126,8 @@ function UpdateTool(props) {
 						<label htmlFor='available-no'> No </label>
 						<input
 							id='available-no'
-							type='checkbox'
+							type='radio'
+							name='available'
 							value='false'
 							onChange={(event) =>
 								setFormData({ ...formData, available: event.target.value })
@@ -155,7 +163,7 @@ function UpdateTool(props) {
 							}></textarea>
 					</li>
 					<li>
-						<button>Submit</button>
+						<button type='submit'>Submit</button>
 					</li>
 				</ul>
 			</form>
