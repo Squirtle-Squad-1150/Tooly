@@ -1,5 +1,6 @@
 import React from 'react';
 import toolCard from './toolCard.css';
+import { Link } from 'react-router-dom';
 // import { Paper } from '@mui/material';
 // import Table from '@mui/material/Table';
 // import TableBody from '@mui/material/TableBody';
@@ -28,7 +29,9 @@ function ToolCard({ tools }) {
 						</h3>
 					</div>
 					<div className='cardBtns'>
-						<button className='updateBtn'>Update</button>
+						<Link to='/update-listing' className='links'>
+							<button className='updateBtn'>Update</button>
+						</Link>
 						<button className='reserveBtn'>Reserve</button>
 					</div>
 				</div>
