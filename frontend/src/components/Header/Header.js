@@ -5,12 +5,15 @@ const Header = () => {
 	return (
 		<div className='header-nav'>
 			<nav>
-				<h1>
-					Tooly{' '}
-					<span role='img' aria-label='hammer and wrench'>
-						🛠️
-					</span>
-				</h1>
+				<Link to='/' className='links'>
+					<h1>
+						Tooly{' '}
+						<span role='img' aria-label='hammer and wrench'>
+							🛠️
+						</span>
+					</h1>
+				</Link>
+
 				<div className='main-nav'>
 					<ul>
 						<li>
