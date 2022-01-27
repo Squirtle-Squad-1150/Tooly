@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import axios from 'axios';
+import './ToolCardDetail.css'
 
 function ToolCardDetail() {
 
@@ -30,13 +31,19 @@ function ToolCardDetail() {
 	}
     
     return (
-			<div>
-                <h1>WORK MFKER</h1>
-                <p>{tool._id}</p>
-                <p>{tool.title}</p>
-                <p>{tool.description}</p>
-
+        <>
+			<div className='cardDetail'>
+				<h2>{tool.title}</h2>
+				<img src={tool.image} alt={tool.title} />
+				<p>{tool.description}</p>
 			</div>
+				<div className='cardBtns'>
+					<Link to='/update-listing' className='links'>
+						<button className='updateBtn'>Update</button>
+					</Link>
+					<button className='reserveBtn'>Reserve</button>
+				</div>
+        </>
 		);
 }
 
