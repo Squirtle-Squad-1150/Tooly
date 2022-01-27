@@ -20,7 +20,7 @@ function UpdateTool(props) {
 	const [formData, setFormData] = useState(defaultData);
 	const { tools, setTools } = useContext(toolContext);
 	const navigate = useNavigate();
-	const {id} = useParams()
+	const { id } = useParams();
 
 	function getToolInfo(id) {
 		const url = `https://cryptic-dusk-16798.herokuapp.com/listing/${id}`;
@@ -32,24 +32,21 @@ function UpdateTool(props) {
 			})
 			.catch(console.error);
 	}
-	
 
 	useEffect(() => {
-		getToolInfo(id)
+		getToolInfo(id);
 		// console.log(formData);
-	}, [])
-
+	}, []);
 
 	function handleSubmit(event) {
 		event.preventDefault();
 		console.log(formData);
-		// axios
-		// 	.put(`https://cryptic-dusk-16798.herokuapp.com/listing/${_id}`, formData)
-		// 	.then((res) => {
-		// 		console.log(res);
-		setFormData(defaultData);
-		// 		navigate('/toolcard/:id');
-		// 	})
+		axios
+			.put(`https://cryptic-dusk-16798.herokuapp.com/listing/${id}`, formData)
+			.then((res) => {
+				console.log(res);
+				navigate('/');
+			});
 
 		console.log(formData);
 	}
