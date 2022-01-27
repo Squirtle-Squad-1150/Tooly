@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './updateTool.css';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { toolContext } from '../../toolContext';
 
 function UpdateTool(props) {
 	const defaultData = {
@@ -17,8 +18,27 @@ function UpdateTool(props) {
 		description: '',
 	};
 	const [formData, setFormData] = useState(defaultData);
-
+	const { tools, setTools } = useContext(toolContext);
 	const navigate = useNavigate();
+	const {id} = useParams()
+
+	function getToolInfo(id) {
+		const url = `https://cryptic-dusk-16798.herokuapp.com/listing/${id}`;
+		fetch(url)
+			.then((res) => res.json())
+			.then((res) => {
+				console.log(res);
+				setFormData(res);
+			})
+			.catch(console.error);
+	}
+	
+
+	useEffect(() => {
+		getToolInfo(id)
+		// console.log(formData);
+	}, [])
+
 
 	function handleSubmit(event) {
 		event.preventDefault();

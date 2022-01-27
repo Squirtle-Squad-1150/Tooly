@@ -23,7 +23,7 @@ function ToolCard({ tools }) {
 							</h3>
 						</div>
 						<div className='cardBtns'>
-							<Link to='/update-listing' className='links'>
+							<Link to={`/update-listing/${tool._id}`} className='links'>
 								<button className='updateBtn'>Update</button>
 							</Link>
 							<button className='reserveBtn'>Reserve</button>

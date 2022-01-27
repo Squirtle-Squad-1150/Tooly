@@ -31,7 +31,7 @@ function App() {
 					<Route path='/' exact element={<ToolContainer />} />
 					<Route path='/toolcard/:id' element={<ToolCardDetail />} />
 					<Route path='/add-listing' element={<AddListing />} />
-					<Route path='/update-listing' element={<UpdateTool />} />
+					<Route path='/update-listing/:id' element={<UpdateTool />} />
 				</Routes>
 			</toolContext.Provider>
 		</>
