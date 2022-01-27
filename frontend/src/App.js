@@ -29,7 +29,7 @@ function App() {
 				<Header />
 				<Routes>
 					<Route path='/' exact element={<ToolContainer />} />
-					<Route path='/toolcard/:id' element={<ToolCard />} />
+					<Route path='/toolcard/:id' element={<ToolCardDetail />} />
 					<Route path='/add-listing' element={<AddListing />} />
 					<Route path='/update-listing' element={<UpdateTool />} />
 				</Routes>
