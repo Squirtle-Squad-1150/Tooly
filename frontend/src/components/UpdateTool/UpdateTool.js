@@ -18,7 +18,6 @@ function UpdateTool(props) {
 		description: '',
 	};
 	const [formData, setFormData] = useState(defaultData);
-	const { tools, setTools } = useContext(toolContext);
 	const navigate = useNavigate();
 	const { id } = useParams();
 
@@ -35,8 +34,7 @@ function UpdateTool(props) {
 
 	useEffect(() => {
 		getToolInfo(id);
-		// console.log(formData);
-	}, []);
+	}, [id]);
 
 	function handleSubmit(event) {
 		event.preventDefault();
@@ -68,11 +66,13 @@ function UpdateTool(props) {
 							onChange={(event) =>
 								setFormData({ ...formData, tool: event.target.value })
 							}>
-							<option value='Table Saw'>Table Saw</option>
 							<option value='Air Compressor'>Air Compressor</option>
-							<option value='Angle Grinder'>Angle Grinder</option>
 							<option value='Air Impact Wrench'>Air Impact Wrench</option>
+							<option value='Angle Grinder'>Angle Grinder</option>
 							<option value='Belt Sander'>Belt Sander</option>
+							<option value='Table Saw' selected={true}>
+								Table Saw
+							</option>
 						</select>
 					</li>
 					<li className='form-li'>
