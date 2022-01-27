@@ -2,6 +2,7 @@ import React from 'react';
 import './toolCard.css';
 import { Link } from 'react-router-dom';
 
+
 function ToolCard({ tools }) {
 	if (!tools) return <div></div>;
 
@@ -9,7 +10,7 @@ function ToolCard({ tools }) {
 	return (
 		<section className='container'>
 			{tools.map((tool) => (
-				<Link to={`toolcard/${tool.id}`} key={tool.id}>
+				<Link to={`toolcard/${tool._id}`} key={tool._id}>
 				<div className='tool' key={tool._id}>
 					<div className='tool-image'>
 						<img src={tool.image} alt={tool.title} />
