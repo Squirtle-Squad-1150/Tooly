@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './updateTool.css';
-// import axios from 'axios';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 function UpdateTool(props) {
@@ -27,7 +27,7 @@ function UpdateTool(props) {
 		// 	.put(`https://cryptic-dusk-16798.herokuapp.com/listing/${_id}`, formData)
 		// 	.then((res) => {
 		// 		console.log(res);
-		// 		setFormData(defaultData);
+		setFormData(defaultData);
 		// 		navigate('/toolcard/:id');
 		// 	})
 
@@ -88,30 +88,40 @@ function UpdateTool(props) {
 						<label className='form-label' htmlFor='category'>
 							Category:{' '}
 						</label>
-						<input
-							className='form-input'
+						<select
+							className='form-select'
 							id='category'
-							type='text'
+							name='category'
 							value={formData.category}
 							onChange={(event) =>
 								setFormData({ ...formData, category: event.target.value })
-							}></input>
+							}>
+							<option value='compressors'>Compressors</option>
+							<option value='grinders'>Grinders</option>
+							<option value='airTools'>Air Tools</option>
+							<option value='saws'>Saws</option>
+						</select>
 					</li>
 					<li className='form-li'>
 						<label className='form-label' htmlFor='condition'>
 							Condition:{' '}
 						</label>
-						<input
-							className='form-input'
+						<select
+							className='form-select'
 							id='condition'
-							type='text'
+							name='condition'
 							value={formData.condition}
 							onChange={(event) =>
 								setFormData({ ...formData, condition: event.target.value })
-							}></input>
+							}>
+							<option value='excellent'>Excellent</option>
+							<option value='good'>Good</option>
+							<option value='okay'>Okay</option>
+							<option value='used'>Used</option>
+						</select>
 					</li>
 					<li className='form-li'>
-						<span>Cordless: </span>
+						<span className='form-span'>Cordless: </span>
 						<label className='form-label form-radio-label' htmlFor='yes'>
 							Yes{' '}
 						</label>
@@ -141,7 +151,7 @@ function UpdateTool(props) {
 							}></input>
 					</li>
 					<li className='form-li'>
-						<span>Available: </span>
+						<span className='form-span'>Available: </span>
 						<label
 							className='form-label form-radio-label'
 							htmlFor='available-yes'>
