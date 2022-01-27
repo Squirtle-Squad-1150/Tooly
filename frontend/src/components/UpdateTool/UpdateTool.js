@@ -131,7 +131,7 @@ function UpdateTool(props) {
 						<span>Available: </span>
 						<label htmlFor='available-yes'>Yes </label>
 						<input
-							id='avaiable-yes'
+							id='available-yes'
 							type='radio'
 							name='available'
 							value='true'
