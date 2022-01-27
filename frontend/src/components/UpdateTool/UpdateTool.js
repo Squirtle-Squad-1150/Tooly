@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './updateTool.css';
+// import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function UpdateTool(props) {
 	const defaultData = {
@@ -15,27 +17,34 @@ function UpdateTool(props) {
 		description: '',
 	};
 	const [formData, setFormData] = useState(defaultData);
-	
+
+	const navigate = useNavigate();
 
 	function handleSubmit(event) {
 		event.preventDefault();
 		console.log(formData);
-		setFormData(defaultData);
+		// axios
+		// 	.put(`https://cryptic-dusk-16798.herokuapp.com/listing/${_id}`, formData)
+		// 	.then((res) => {
+		// 		console.log(res);
+		// 		setFormData(defaultData);
+		// 		navigate('/toolcard/:id');
+		// 	})
+
 		console.log(formData);
 	}
 
-	function resetRadios () {
-
-	}
-
 	return (
-		<div>
-			<h2>Update My Listing</h2>
-			<form onSubmit={handleSubmit}>
-				<ul>
-					<li>
-						<label htmlFor='tool'>Tool: </label>
+		<main className='form-container'>
+			<h2 className='form-h2'>Update My Listing</h2>
+			<form className='form' onSubmit={handleSubmit}>
+				<ul className='form-ul'>
+					<li className='form-li'>
+						<label className='form-label' htmlFor='tool'>
+							Tool:{' '}
+						</label>
 						<select
+							className='form-select'
 							id='tool'
 							name='tool'
 							value={formData.tool}
@@ -49,9 +58,12 @@ function UpdateTool(props) {
 							<option value='beltSander'>Belt Sander</option>
 						</select>
 					</li>
-					<li>
-						<label htmlFor='brand'>Brand: </label>
+					<li className='form-li'>
+						<label className='form-label' htmlFor='brand'>
+							Brand:{' '}
+						</label>
 						<input
+							className='form-input'
 							id='brand'
 							type='text'
 							value={formData.brand}
@@ -59,9 +71,12 @@ function UpdateTool(props) {
 								setFormData({ ...formData, brand: event.target.value })
 							}></input>
 					</li>
-					<li>
-						<label htmlFor='model'>Model: </label>
+					<li className='form-li'>
+						<label className='form-label' htmlFor='model'>
+							Model:{' '}
+						</label>
 						<input
+							className='form-input'
 							id='model'
 							type='text'
 							value={formData.model}
@@ -69,9 +84,12 @@ function UpdateTool(props) {
 								setFormData({ ...formData, model: event.target.value })
 							}></input>
 					</li>
-					<li>
-						<label htmlFor='category'>Category: </label>
+					<li className='form-li'>
+						<label className='form-label' htmlFor='category'>
+							Category:{' '}
+						</label>
 						<input
+							className='form-input'
 							id='category'
 							type='text'
 							value={formData.category}
@@ -79,35 +97,26 @@ function UpdateTool(props) {
 								setFormData({ ...formData, category: event.target.value })
 							}></input>
 					</li>
-					<li>
-						<span>Condition: </span>
-						<label htmlFor='new'>New </label>
+					<li className='form-li'>
+						<label className='form-label' htmlFor='condition'>
+							Condition:{' '}
+						</label>
 						<input
-							id='new'
-							type='radio'
-							name='condition'
-							value='new'
-							// Learned how to reset radio buttons on form submit from
-							//https://surajsharma.net/blog/react-handle-radio-buttons
-							checked={formData.condition === 'new'}
-							onChange={(event) =>
-								setFormData({ ...formData, condition: event.target.value })
-							}></input>
-						<label htmlFor='used'>Used </label>
-						<input
-							id='used'
-							type='radio'
-							name='condition'
-							value='used'
-							checked={formData.condition === 'used'}
+							className='form-input'
+							id='condition'
+							type='text'
+							value={formData.condition}
 							onChange={(event) =>
 								setFormData({ ...formData, condition: event.target.value })
 							}></input>
 					</li>
-					<li>
+					<li className='form-li'>
 						<span>Cordless: </span>
-						<label htmlFor='yes'>Yes </label>
+						<label className='form-label form-radio-label' htmlFor='yes'>
+							Yes{' '}
+						</label>
 						<input
+							className='form-input'
 							id='yes'
 							type='radio'
 							name='cordless'
@@ -116,8 +125,12 @@ function UpdateTool(props) {
 							onChange={(event) =>
 								setFormData({ ...formData, cordless: event.target.value })
 							}></input>
-						<label htmlFor='no'> No </label>
+						<label className='form-label form-radio-label' htmlFor='no'>
+							{' '}
+							No{' '}
+						</label>
 						<input
+							className='form-input'
 							id='no'
 							type='radio'
 							name='cordless'
@@ -127,11 +140,16 @@ function UpdateTool(props) {
 								setFormData({ ...formData, cordless: event.target.value })
 							}></input>
 					</li>
-					<li>
+					<li className='form-li'>
 						<span>Available: </span>
-						<label htmlFor='available-yes'>Yes </label>
+						<label
+							className='form-label form-radio-label'
+							htmlFor='available-yes'>
+							Yes{' '}
+						</label>
 						<input
-							id='available-yes'
+							className='form-input'
+							id='avaiable-yes'
 							type='radio'
 							name='available'
 							value='true'
@@ -139,20 +157,29 @@ function UpdateTool(props) {
 							onChange={(event) =>
 								setFormData({ ...formData, available: event.target.value })
 							}></input>
-						<label htmlFor='available-no'> No </label>
+						<label
+							className='form-label form-radio-label'
+							htmlFor='available-no'>
+							{' '}
+							No{' '}
+						</label>
 						<input
+							className='form-input'
 							id='available-no'
 							type='radio'
 							name='available'
-							value= 'false'
+							value='false'
 							checked={formData.available === 'false'}
 							onChange={(event) =>
 								setFormData({ ...formData, available: event.target.value })
 							}></input>
 					</li>
-					<li>
-						<label htmlFor='location'>Location: </label>
+					<li className='form-li'>
+						<label className='form-label' htmlFor='location'>
+							Location:{' '}
+						</label>
 						<input
+							className='form-input'
 							id='location'
 							type='text'
 							value={formData.location}
@@ -160,9 +187,12 @@ function UpdateTool(props) {
 								setFormData({ ...formData, location: event.target.value })
 							}></input>
 					</li>
-					<li>
-						<label htmlFor='price'>Price: $</label>
+					<li className='form-li'>
+						<label className='form-label' htmlFor='price'>
+							Price: $
+						</label>
 						<input
+							className='form-input'
 							id='price'
 							type='number'
 							min='1'
@@ -171,9 +201,12 @@ function UpdateTool(props) {
 								setFormData({ ...formData, price: event.target.value })
 							}></input>
 					</li>
-					<li>
-						<label htmlFor='description'>Description: </label>
+					<li className='form-li'>
+						<label className='form-label' htmlFor='description'>
+							Description:{' '}
+						</label>
 						<textarea
+							className='form-textarea'
 							id='description'
 							rows='5'
 							cols='40'
@@ -182,12 +215,14 @@ function UpdateTool(props) {
 								setFormData({ ...formData, description: event.target.value })
 							}></textarea>
 					</li>
-					<li>
-						<button type='submit'>Submit</button>
+					<li className='form-li'>
+						<button className='form-button' type='submit'>
+							Submit
+						</button>
 					</li>
 				</ul>
 			</form>
-		</div>
+		</main>
 	);
 }
 
