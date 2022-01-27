@@ -6,7 +6,7 @@ import { toolContext } from '../../toolContext';
 
 function UpdateTool(props) {
 	const defaultData = {
-		tool: 'tableSaw',
+		tool: '',
 		brand: '',
 		model: '',
 		category: '',
@@ -71,11 +71,11 @@ function UpdateTool(props) {
 							onChange={(event) =>
 								setFormData({ ...formData, tool: event.target.value })
 							}>
-							<option value='tableSaw'>Table Saw</option>
-							<option value='airCompressor'>Air Compressor</option>
-							<option value='angleGrinder'>Angle Grinder</option>
-							<option value='airImpactWrench'>Air Impact Wrench</option>
-							<option value='beltSander'>Belt Sander</option>
+							<option value='Table Saw'>Table Saw</option>
+							<option value='Air Compressor'>Air Compressor</option>
+							<option value='Angle Grinder'>Angle Grinder</option>
+							<option value='Air Impact Wrench'>Air Impact Wrench</option>
+							<option value='Belt Sander'>Belt Sander</option>
 						</select>
 					</li>
 					<li className='form-li'>
@@ -116,10 +116,10 @@ function UpdateTool(props) {
 							onChange={(event) =>
 								setFormData({ ...formData, category: event.target.value })
 							}>
-							<option value='compressors'>Compressors</option>
-							<option value='grinders'>Grinders</option>
-							<option value='airTools'>Air Tools</option>
-							<option value='saws'>Saws</option>
+							<option value='Compressors'>Compressors</option>
+							<option value='Grinders'>Grinders</option>
+							<option value='Air Tools'>Air Tools</option>
+							<option value='Saws'>Saws</option>
 						</select>
 					</li>
 					<li className='form-li'>
@@ -134,10 +134,10 @@ function UpdateTool(props) {
 							onChange={(event) =>
 								setFormData({ ...formData, condition: event.target.value })
 							}>
-							<option value='excellent'>Excellent</option>
-							<option value='good'>Good</option>
-							<option value='okay'>Okay</option>
-							<option value='used'>Used</option>
+							<option value='Excellent'>Excellent</option>
+							<option value='Good'>Good</option>
+							<option value='Okay'>Okay</option>
+							<option value='Used'>Used</option>
 						</select>
 					</li>
 					<li className='form-li'>
@@ -247,7 +247,7 @@ function UpdateTool(props) {
 					</li>
 					<li className='form-li'>
 						<button className='form-button' type='submit'>
-							Submit
+							Update
 						</button>
 					</li>
 				</ul>
