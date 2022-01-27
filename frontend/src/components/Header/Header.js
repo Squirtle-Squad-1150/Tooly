@@ -4,10 +4,10 @@ import header from './header.css';
 const Header = () => {
 	return (
 		<div className='header-nav'>
-			<nav>
+			<nav className='navBar'>
 				<Link to='/' className='links'>
-					<h1>
-						Tooly{' '}
+					<h1 className='navTitle'>
+						Tooly &nbsp;
 						<span role='img' aria-label='hammer and wrench'>
 							🛠️
 						</span>
@@ -15,8 +15,8 @@ const Header = () => {
 				</Link>
 
 				<div className='main-nav'>
-					<ul>
-						<li>
+					<ul className='navUl'>
+						<li className='navLi'>
 							<Link to='/' className='links'>
 								Home
 							</Link>

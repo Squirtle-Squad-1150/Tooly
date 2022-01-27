@@ -2,20 +2,20 @@
 	background-color: #276074;
 }
 
-ul {
+.navUl {
 	padding-right: 30px;
 	list-style-type: none;
 	display: flex;
 }
 
-h1,
-nav {
+.navTitle,
+.navBar {
 	display: flex;
 	color: lightgray;
 	justify-content: space-between;
 }
 
-li {
+.navLi {
 	padding: 10px;
 }
 
