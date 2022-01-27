@@ -1,17 +1,9 @@
 import React from 'react';
-import toolCard from './toolCard.css';
+import './toolCard.css';
 import { Link } from 'react-router-dom';
-// import { Paper } from '@mui/material';
-// import Table from '@mui/material/Table';
-// import TableBody from '@mui/material/TableBody';
-// import TableCell from '@mui/material/TableCell';
-// import TableContainer from '@mui/material/TableContainer';
-// import TableRow from '@mui/material/TableRow';
-// import Card from '@mui/material/Card';
-// import CardContent from '@mui/material/CardContent';
 
 function ToolCard({ tools }) {
-	console.log(tools);
+	if (!tools) return <div>load</div>;
 
 	return (
 		<section className='container'>
