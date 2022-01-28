@@ -5,6 +5,9 @@
 	grid-template-rows: 0.5fr;
 	background-color: white;
 }
+.tool:hover {
+	transform: scale(1.05);
+}
 
 .container {
 	display: grid;
