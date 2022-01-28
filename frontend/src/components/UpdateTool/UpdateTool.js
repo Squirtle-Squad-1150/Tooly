@@ -34,7 +34,7 @@ function UpdateTool(props) {
 
 	useEffect(() => {
 		getToolInfo(id);
-	}, []);
+	}, [id]);
 
 	function handleSubmit(event) {
 		event.preventDefault();
