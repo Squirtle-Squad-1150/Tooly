@@ -5,7 +5,7 @@ const Header = () => {
 	return (
 		<div className='header-nav'>
 			<nav className='navBar'>
-				<Link to='/' className='links'>
+				<Link to='/toolcard' className='links'>
 					<h1 className='navTitle'>
 						Tooly &nbsp;
 						<span role='img' aria-label='hammer and wrench'>
@@ -17,7 +17,7 @@ const Header = () => {
 				<div className='main-nav'>
 					<ul className='navUl'>
 						<li className='navLi'>
-							<Link to='/' className='links'>
+							<Link to='/toolcard' className='links'>
 								Home
 							</Link>
 						</li>

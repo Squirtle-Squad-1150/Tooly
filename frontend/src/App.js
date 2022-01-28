@@ -3,11 +3,12 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import ToolContainer from './components/ToolContainer/ToolContainer';
-import ToolCard from './components/ToolCard/ToolCard';
 import Header from './components/Header/Header';
 import AddListing from './components/AddListing/AddListing';
 import UpdateTool from './components/UpdateTool/UpdateTool';
 import ToolCardDetail from './components/ToolCardDetail/ToolCardDetail';
+import SignIn from './components/SignIn/SignIn';
+import SignUp from './components/SignUp/SignUp';
 
 import { toolContext } from './toolContext';
 
@@ -28,7 +29,9 @@ function App() {
 			<toolContext.Provider value={{ tools, setTools }}>
 				<Header />
 				<Routes>
-					<Route path='/' exact element={<ToolContainer />} />
+					<Route path='/' exact element={<SignIn />} />
+					<Route path='/signup' element={<SignUp />} />
+					<Route path='/toolcard' element={<ToolContainer />} />
 					<Route path='/toolcard/:id' element={<ToolCardDetail />} />
 					<Route path='/add-listing' element={<AddListing />} />
 					<Route path='/update-listing/:id' element={<UpdateTool />} />

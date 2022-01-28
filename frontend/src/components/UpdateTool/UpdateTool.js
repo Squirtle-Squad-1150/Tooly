@@ -43,7 +43,7 @@ function UpdateTool(props) {
 			.put(`https://cryptic-dusk-16798.herokuapp.com/listing/${id}`, formData)
 			.then((res) => {
 				console.log(res);
-				navigate('/');
+				navigate('/toolcard');
 			});
 
 		console.log(formData);
