@@ -53,6 +53,14 @@
 	background-color: #276074;
 	/* color: #d3d3d3; */
 	color: white;
-	padding: 0.5rem;
-	border-radius: 0.45rem;
+	padding: .5rem;
+	border-radius: 0.45rem;	
+	width: 15%;
+}
+#update {
+	margin-right: 1rem;
+	
+}
+#delete {
+	background-color: rgb(223, 5, 5);
 }

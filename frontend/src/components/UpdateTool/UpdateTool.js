@@ -34,7 +34,7 @@ function UpdateTool(props) {
 
 	useEffect(() => {
 		getToolInfo(id);
-	}, [id]);
+	}, []);
 
 	function handleSubmit(event) {
 		event.preventDefault();
@@ -47,6 +47,15 @@ function UpdateTool(props) {
 			});
 
 		console.log(formData);
+	}
+
+	function handleDelete() {
+		axios
+			.delete(`https://cryptic-dusk-16798.herokuapp.com/listing/${id}`)
+			.then((res) => {
+				console.log(res);
+				navigate('/');
+			});
 	}
 
 	return (
@@ -243,8 +252,15 @@ function UpdateTool(props) {
 							}></textarea>
 					</li>
 					<li className='form-li'>
-						<button className='form-button' type='submit'>
+						<button className='form-button' id='update' type='submit'>
 							Update
+						</button>
+						<button
+							className='form-button'
+							id='delete'
+							type='submit'
+							onClick={handleDelete}>
+							Delete
 						</button>
 					</li>
 				</ul>
