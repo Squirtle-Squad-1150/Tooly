@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './updateTool.css';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
-import { toolContext } from '../../toolContext';
+
 
 function UpdateTool(props) {
 	const defaultData = {
