@@ -17,7 +17,7 @@ function UpdateTool(props) {
 		price: Number,
 		description: '',
 	};
-    
+
 	const [formData, setFormData] = useState(defaultData);
 	const navigate = useNavigate();
 
@@ -28,7 +28,7 @@ function UpdateTool(props) {
 			.post(`https://cryptic-dusk-16798.herokuapp.com/listing/`, formData)
 			.then((res) => {
 				console.log(res);
-				navigate('/');
+				navigate('/toolcard');
 			});
 
 		console.log(formData);

@@ -54,7 +54,7 @@ function UpdateTool(props) {
 			.delete(`https://cryptic-dusk-16798.herokuapp.com/listing/${id}`)
 			.then((res) => {
 				console.log(res);
-				navigate('/');
+				navigate('/toolcard');
 			});
 	}
 
