@@ -1,10 +1,10 @@
 # Tooly
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Tooly Screenshot](Assets/tool-container-screenshot.png)
 
 ## Description
 
-Tooly is an app to find and rent tools. 
+Tooly is a peer to peer tool rental app. Instead of buying a specialty tool you won't frequently use, grab the Tooly app to secure a tool for the time needed and complete your project!
 
 ### `npm start`
 
