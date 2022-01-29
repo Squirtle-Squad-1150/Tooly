@@ -21,6 +21,7 @@ function UpdateTool(props) {
 	const [formData, setFormData] = useState(defaultData);
 	const navigate = useNavigate();
 
+	// Post request to add new tool to API
 	function handleSubmit(event) {
 		event.preventDefault();
 		console.log(formData);

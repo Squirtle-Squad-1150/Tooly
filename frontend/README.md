@@ -1,70 +1,62 @@
-# Tooly
+# `Tooly`
 
 ![Tooly Screenshot](Assets/tool-container-screenshot.png)
 
-## Description
+![Tooly update form screenshot](Assets/tool-updateForm-screenshot.png)
 
-Tooly is a peer to peer tool rental app. Instead of buying a specialty tool you won't frequently use, grab the Tooly app to secure a tool for the time needed and complete your project!
+## `Description`
 
-### `npm start`
+Tooly is a peer to peer power tool rental app. Instead of buying a specialty tool you won't frequently use, grab the Tooly app to secure a tool for the time needed and complete your project!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## `User Stories`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `MVP`
 
-### `npm test`
+- As a user, I want to be able to post a new power tool for rental, so I can be able to rent my tool.
+- As a user, I want to be able to view all power tools available for rental, and see the cost, description, title, so I can make an informed decision.
+- As a user, I want to be able to see a detailed view of a listing if clicked on, so I can know more about what I am about to rent.
+- As a user, I want to be able to update my listing, so I can make my listing as accurate as possible.
+- As a user, I want to be able to delete my listing, so i can remove the posting.
+- As a user, I want to be able to reserve the powertool if available so I can use the power tool for my job.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `Stretch`
 
-### `npm run build`
+- As a user, I want to be able to specify when I want to reserve my listing, so I can have it for when I need it.
+- As a user, I want to be able to sort listings by price, filter by category, so I can get to the listing I need as quickly as possible.
+- As a user, I want to add images to my listings, so people can see how the tool looks.
+- As a user, I want to be able to have my own account, so I can keep track of my listings and power tools I’ve reserved.
+- As a user, I want to be able to message the owner of the listing, so we can discuss details of the rental.
+- As a user, I want to see the location of the power tool, so I am not traveling far away to rent a tool.
+- As a user, I want to be able to accept a rental or not, so I can avoid lower rated users.
+- As a user, I want to be able to rate how my experience was renting the tool, so other users can have an idea of the quality of the product.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## `Technologies Used`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- HTML
+- CSS
+- JavaScript
+- React
+- Axios
+- GitHub
+- Netlify
+- Visual Studio Code
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## `Installation Instructions`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Fork and clone project repository
+2. Install all dependencies with below terminal command
+```
+npm install
+```
+3. cd into repository, then start local server by running the command below. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Open project in your code editor of choice. 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## `Contributions`
+- Source code: [https://github.com/Squirtle-Squad-1150/Tooly](https://github.com/Squirtle-Squad-1150/Tooly)
+- Issue Tracker: [https://github.com/Squirtle-Squad-1150/Tooly/issues](https://github.com/Squirtle-Squad-1150/Tooly/issues)

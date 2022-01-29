@@ -1,5 +1,8 @@
-.form-container * {
+body {
+	background-color: lemonchiffon;
 	/* border: 1px solid red; */
+}
+.form-container * {
 	background-color: lemonchiffon;
 }
 .form-h2 {
@@ -12,10 +15,10 @@
 }
 .form-ul {
 	list-style: none;
-	padding: 0.5rem 1rem;
+	padding: 0.5rem 1.5rem;
 	display: block;
 	width: 50%;
-	margin: 0;
+	/* margin: 0; */
 }
 .form-li {
 	padding: 0.25rem;

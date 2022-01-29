@@ -21,6 +21,7 @@ function UpdateTool(props) {
 	const navigate = useNavigate();
 	const { id } = useParams();
 
+	// API call to prepopulate form data for tool update
 	function getToolInfo(id) {
 		const url = `https://cryptic-dusk-16798.herokuapp.com/listing/${id}`;
 		fetch(url)
@@ -36,6 +37,7 @@ function UpdateTool(props) {
 		getToolInfo(id);
 	}, [id]);
 
+	// Put request to update form data in API
 	function handleSubmit(event) {
 		event.preventDefault();
 		console.log(formData);
@@ -49,6 +51,7 @@ function UpdateTool(props) {
 		console.log(formData);
 	}
 
+	// Delete tool from API
 	function handleDelete() {
 		axios
 			.delete(`https://cryptic-dusk-16798.herokuapp.com/listing/${id}`)
