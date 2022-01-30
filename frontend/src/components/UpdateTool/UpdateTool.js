@@ -19,11 +19,11 @@ function UpdateTool(props) {
 	};
 	const [formData, setFormData] = useState(defaultData);
 	const navigate = useNavigate();
-	const { id } = useParams();
+	const { _id } = useParams();
 
 	// API call to prepopulate form data for tool update
 	function getToolInfo(id) {
-		const url = `https://cryptic-dusk-16798.herokuapp.com/listing/${id}`;
+		const url = `https://cryptic-dusk-16798.herokuapp.com/listing/${_id}`;
 		fetch(url)
 			.then((res) => res.json())
 			.then((res) => {
@@ -34,15 +34,15 @@ function UpdateTool(props) {
 	}
 
 	useEffect(() => {
-		getToolInfo(id);
-	}, [id]);
+		getToolInfo(_id);
+	}, [_id]);
 
 	// Put request to update form data in API
 	function handleSubmit(event) {
 		event.preventDefault();
 		console.log(formData);
 		axios
-			.put(`https://cryptic-dusk-16798.herokuapp.com/listing/${id}`, formData)
+			.put(`https://cryptic-dusk-16798.herokuapp.com/listing/${_id}`, formData)
 			.then((res) => {
 				console.log(res);
 				navigate('/toolcard');
@@ -54,7 +54,7 @@ function UpdateTool(props) {
 	// Delete tool from API
 	function handleDelete() {
 		axios
-			.delete(`https://cryptic-dusk-16798.herokuapp.com/listing/${id}`)
+			.delete(`https://cryptic-dusk-16798.herokuapp.com/listing/${_id}`)
 			.then((res) => {
 				console.log(res);
 				navigate('/toolcard');
