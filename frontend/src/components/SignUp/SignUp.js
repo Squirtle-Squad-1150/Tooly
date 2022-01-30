@@ -17,7 +17,7 @@ function SignUp(props) {
 
 	function handleSubmit(event) {
 		event.preventDefault();
-		axios.post('http://localhost:8000/users/').then((res) => {
+		axios.post('http://localhost:8000/signup/').then((res) => {
 			console.log(res);
 			navigate('/signin');
 		});
