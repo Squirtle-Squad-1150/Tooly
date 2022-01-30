@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './toolCard.css';
 import { Link } from 'react-router-dom';
 import UpdateTool from '../UpdateTool/UpdateTool';
 
 function ToolCard({ tools }) {
+	
 	if (!tools) return <div></div>;
-
+	
 	return (
 		<section className='container'>
 			{tools.map((tool) => (
@@ -26,7 +27,9 @@ function ToolCard({ tools }) {
 							<Link to={`/update-listing/${tool._id}`} className='links'>
 								<button className='updateBtn'>Update</button>
 							</Link>
-							<button className='reserveBtn'>Reserve</button>
+							<Link to={`/reserve-listing/${tool._id}`} className='links'>
+								<button className='reserveBtn'>Reserve</button>
+							</Link>
 						</div>
 					</div>
 				</Link>

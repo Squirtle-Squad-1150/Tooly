@@ -9,6 +9,7 @@ import UpdateTool from './components/UpdateTool/UpdateTool';
 import ToolCardDetail from './components/ToolCardDetail/ToolCardDetail';
 import SignIn from './components/SignIn/SignIn';
 import SignUp from './components/SignUp/SignUp';
+import ReserveTool from './components/ReserveTool/ReserveTool';
 
 import { toolContext } from './toolContext';
 
@@ -32,9 +33,10 @@ function App() {
 					<Route path='/' exact element={<SignIn />} />
 					<Route path='/signup' element={<SignUp />} />
 					<Route path='/toolcard' element={<ToolContainer />} />
-					<Route path='/toolcard/:id' element={<ToolCardDetail />} />
+					<Route path='/toolcard/:_id' element={<ToolCardDetail />} />
 					<Route path='/add-listing' element={<AddListing />} />
-					<Route path='/update-listing/:id' element={<UpdateTool />} />
+					<Route path='/update-listing/:_id' element={<UpdateTool />} />
+					<Route path='/reserve-listing/:_id' element={<ReserveTool />} />
 				</Routes>
 			</toolContext.Provider>
 		</>

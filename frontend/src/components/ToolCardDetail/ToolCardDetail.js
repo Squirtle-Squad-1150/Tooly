@@ -31,19 +31,21 @@ function ToolCardDetail() {
 	}
     
     return (
-        <>
-			<div className='cardDetail'>
-				<h2>{tool.title}</h2>
-				<img src={tool.image} alt={tool.title} />
-				<p>{tool.description}</p>
-			</div>
+			<>
+				<div className='cardDetail'>
+					<h2>{tool.title}</h2>
+					<img src={tool.image} alt={tool.title} />
+					<p>{tool.description}</p>
+				</div>
 				<div className='cardBtns'>
-					<Link to='/update-listing' className='links'>
+					<Link to='/update-listing/:_id' className='links'>
 						<button className='updateBtn'>Update</button>
 					</Link>
-					<button className='reserveBtn'>Reserve</button>
+					<Link to={`/reserve-listing/${tool._id}`} className='links'>
+						<button className='reserveBtn'>Reserve</button>
+					</Link>
 				</div>
-        </>
+			</>
 		);
 }
 
