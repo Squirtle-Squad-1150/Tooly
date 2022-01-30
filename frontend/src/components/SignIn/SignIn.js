@@ -1,28 +1,22 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './SignIn.css';
+import axios from 'axios';
 
 function SignIn(props) {
-	const [user, setUser] = useState('');
-	const [password, setPassword] = useState('');
+	const [user, setUser] = useState({
+		email: '',
+		password: '',
+	});
 
 	const navigate = useNavigate();
 
-	// GET request to match email/pw with DB, hash pw before sending?
-	// Do i need to store the token in a new var if thats what the db will return?
-	// Or how can I redirect the page to /toolcard when the login is successful?
-	// Unsuccessful logins should be caught with custom_errors --- not sure how to display these errors, are they console.logs?
-
 	function handleSubmit(event) {
 		event.preventDefault();
-		// axios
-		// 	.get(`https://cryptic-dusk-16798.herokuapp.com/listing/${id}`, user)
-		// 	.then((res) => {
-		// 		console.log(res);
-		navigate('/toolcard');
-		// 	});
-
-		// console.log(user);
+		axios.post('http://localhost:8000/users').then((res) => {
+			console.log(res);
+			navigate('/toolcard');
+		});
 	}
 
 	return (
@@ -37,8 +31,9 @@ function SignIn(props) {
 							className='login-input'
 							id='email'
 							type='email'
+							value={user.email}
 							onChange={(event) =>
-								setUser({ ...user, user: event.target.value })
+								setUser({ ...user, email: event.target.value })
 							}></input>
 					</li>
 					<li className='login-li'>
@@ -49,8 +44,9 @@ function SignIn(props) {
 							className='login-input'
 							id='password'
 							type='password'
+							value={user.password}
 							onChange={(event) =>
-								setPassword({ ...password, password: event.target.value })
+								setUser({ ...user, password: event.target.value })
 							}></input>
 					</li>
 					<li className='login-li'>

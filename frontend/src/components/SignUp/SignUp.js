@@ -1,30 +1,32 @@
 import { useState } from 'react';
 import './signUp.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function SignUp(props) {
 	// POST REQUEST TO MONGO
 	// send email and password to mongo
 	// mongo will store email and hash password
 
-	const [newUser, setNewUser] = useState('');
-	const [newPassword, setNewPassword] = useState('');
+	const [newUser, setNewUser] = useState({
+		email: '',
+		password: '',
+	});
+
+	const navigate = useNavigate();
 
 	function handleSubmit(event) {
 		event.preventDefault();
-		// axios
-		// 	.post(`https://cryptic-dusk-16798.herokuapp.com/listing/${id}`, user)
-		// 	.then((res) => {
-		// 		console.log(res);
-		// 		navigate('/');
-		// 	});
-
-		// console.log(user);
+		axios.post('http://localhost:8000/users/').then((res) => {
+			console.log(res);
+			navigate('/signin');
+		});
+		console.log(newUser);
 	}
 
 	return (
 		<main className='sign-up-form'>
-			<form onSubmit={{ handleSubmit }}>
+			<form className='sign-up-form' onSubmit={handleSubmit}>
 				<ul className='sign-up-form-ul'>
 					<li className='sign-up-form-li'>
 						<label className='sign-up-form-label' htmlFor='new-user'>
@@ -34,8 +36,9 @@ function SignUp(props) {
 							className='sign-up-form-input'
 							id='email'
 							type='email'
+							value={newUser.email}
 							onChange={(event) =>
-								setNewUser({ ...newUser, newUser: event.target.value })
+								setNewUser({ ...newUser, email: event.target.value })
 							}></input>
 					</li>
 					<li className='sign-up-form-li'>
@@ -46,10 +49,11 @@ function SignUp(props) {
 							className='sign-up-form-input'
 							id='password'
 							type='password'
+							value={newUser.password}
 							onChange={(event) =>
-								setNewPassword({
-									...newPassword,
-									newPassword: event.target.value,
+								setNewUser({
+									...newUser,
+									password: event.target.value,
 								})
 							}></input>
 					</li>
