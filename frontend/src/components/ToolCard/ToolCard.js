@@ -10,17 +10,17 @@ function ToolCard({ tools }) {
 	return (
 		<section className='container'>
 			{tools.map((tool) => (
-				<Link to={`toolcard/${tool._id}`} key={tool._id}>
+				<Link to={`${tool._id}`} key={tool._id}>
 					<div className='tool' key={tool._id}>
 						<div className='tool-image'>
-							<img src={tool.image} alt={tool.title} />
+							<img src={tool.image} alt={tool.tool} />
 						</div>
 						<div className='tool-location'>
 							<p>📍 {tool.location}</p>
 						</div>
 						<div className='tool-title'>
 							<h3>
-								{tool.title} ({tool.brand})
+								{tool.tool} ({tool.brand})
 							</h3>
 						</div>
 						<div className='cardBtns'>
