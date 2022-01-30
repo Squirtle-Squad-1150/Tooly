@@ -36,6 +36,7 @@ Tooly is a peer to peer power tool rental app. Instead of buying a specialty too
 - CSS
 - JavaScript
 - React
+- React Modern Calendar Date Picker
 - Axios
 - GitHub
 - Netlify
