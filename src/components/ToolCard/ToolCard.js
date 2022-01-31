@@ -4,9 +4,8 @@ import { Link } from 'react-router-dom';
 import UpdateTool from '../UpdateTool/UpdateTool';
 
 function ToolCard({ tools }) {
-	
 	if (!tools) return <div></div>;
-	
+
 	return (
 		<section className='container'>
 			{tools.map((tool) => (

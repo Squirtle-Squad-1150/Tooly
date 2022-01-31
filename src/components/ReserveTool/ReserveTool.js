@@ -45,7 +45,7 @@ function ReserveTool() {
 		axios
 			.put(`https://cryptic-dusk-16798.herokuapp.com/listing/${_id}`, tool)
 			.then((res) => {
-				navigate('/');
+				navigate(`/toolcard/${_id}`);
 			});
 	}
 
@@ -69,7 +69,10 @@ function ReserveTool() {
 					// disabledDays={disabledDays}
 				/>
 				<div>
-					<button classname='submit-calendar' onClick={handleSubmit}>
+					<button
+						classname='submit-calendar'
+						id='reserve-button'
+						onClick={handleSubmit}>
 						Submit
 					</button>
 				</div>

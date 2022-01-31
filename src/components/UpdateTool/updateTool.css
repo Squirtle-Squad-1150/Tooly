@@ -5,6 +5,7 @@ body {
 .form-container * {
 	background-color: lemonchiffon;
 	display: flex;
+	/* justify-content: center; */
 }
 .form-h2 {
 	margin: 0;

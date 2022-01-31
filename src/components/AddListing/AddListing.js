@@ -5,11 +5,11 @@ import { useNavigate } from 'react-router-dom';
 
 function UpdateTool(props) {
 	const defaultData = {
-		tool: '',
+		tool: 'Air Compressor',
 		brand: '',
 		model: '',
-		category: '',
-		condition: '',
+		category: 'Compressors',
+		condition: 'Excellent',
 		cordless: Boolean,
 		available: Boolean,
 		location: '',
@@ -48,6 +48,7 @@ function UpdateTool(props) {
 							id='tool'
 							name='tool'
 							value={formData.tool}
+							// defaultValue={'Air Compressor'}
 							onChange={(event) =>
 								setFormData({ ...formData, tool: event.target.value })
 							}>
@@ -222,9 +223,9 @@ function UpdateTool(props) {
 							id='url'
 							type='url'
 							min='1'
-							value={formData.url}
+							value={formData.image}
 							onChange={(event) =>
-								setFormData({ ...formData, url: event.target.value })
+								setFormData({ ...formData, image: event.target.value })
 							}></input>
 					</li>
 					<li className='form-li'>

@@ -9,4 +9,26 @@
 	padding: 10px;
 	position: relative;
 	color: lightgray;
+	text-align: center;
+}
+
+#reserve-button{
+	display: block;
+	width: 82%;
+	padding:0.3em 1.2em;
+	margin:0 0.3em 0.3em 0;
+	border-radius:2em;
+	box-sizing: border-box;
+	text-decoration:none;
+	font-family:'Roboto',sans-serif;
+	font-weight:300;
+	color: black;
+	background-color:white;
+	text-align: center;
+	transition: all 0.2s;
+}
+
+.submit-calendar:hover{
+	background-color:#4095c6;
+	color: white;
 }
