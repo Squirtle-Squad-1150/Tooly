@@ -22,7 +22,7 @@ function ToolCardDetail() {
 	useEffect(() => {
 		// This code to run when component mounts
 		getTool(_id);
-		console.log(_id);
+		// console.log(_id);
 	}, [_id]);
 
 	if (!tool) {
