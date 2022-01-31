@@ -1,8 +1,7 @@
-import React, {  useState } from 'react';
+import React, { useState } from 'react';
 import '../UpdateTool/updateTool.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
 
 function UpdateTool(props) {
 	const defaultData = {
@@ -212,6 +211,20 @@ function UpdateTool(props) {
 							value={formData.price}
 							onChange={(event) =>
 								setFormData({ ...formData, price: event.target.value })
+							}></input>
+					</li>
+					<li className='form-li'>
+						<label className='form-label' htmlFor='img-url'>
+							Image URL:
+						</label>
+						<input
+							className='form-input'
+							id='url'
+							type='url'
+							min='1'
+							value={formData.url}
+							onChange={(event) =>
+								setFormData({ ...formData, url: event.target.value })
 							}></input>
 					</li>
 					<li className='form-li'>

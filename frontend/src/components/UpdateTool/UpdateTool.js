@@ -3,7 +3,6 @@ import './updateTool.css';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 
-
 function UpdateTool(props) {
 	const defaultData = {
 		tool: '',
@@ -65,7 +64,7 @@ function UpdateTool(props) {
 		<main className='form-container'>
 			<h2 className='form-h2'>Update My Listing</h2>
 			<form className='form' onSubmit={handleSubmit}>
-			<br />
+				<br />
 				<ul className='form-ul'>
 					<li className='form-li'>
 						<label className='form-label' htmlFor='tool'>
@@ -239,6 +238,20 @@ function UpdateTool(props) {
 							value={formData.price}
 							onChange={(event) =>
 								setFormData({ ...formData, price: event.target.value })
+							}></input>
+					</li>
+					<li className='form-li'>
+						<label className='form-label' htmlFor='img-url'>
+							Image URL:
+						</label>
+						<input
+							className='form-input'
+							id='url'
+							type='url'
+							min='1'
+							value={formData.url}
+							onChange={(event) =>
+								setFormData({ ...formData, url: event.target.value })
 							}></input>
 					</li>
 					<li className='form-li'>
