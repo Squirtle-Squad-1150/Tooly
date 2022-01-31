@@ -9,18 +9,45 @@ function SignIn(props) {
 		password: '',
 	});
 
+	const [token, setToken] = useState('');
+
 	const navigate = useNavigate();
 
 	function handleSubmit(event) {
-		event.preventDefault();
-		axios.post('http://localhost:8000/users').then((res) => {
+		// event.preventDefault();
+		axios.post('http://localhost:8000/signin').then((res) => {
 			console.log(res);
 			navigate('/toolcard');
 		});
 	}
 
+	const spans = document.querySelectorAll('.tooly-header span');
+
+	spans.forEach((span, idx) => {
+		span.addEventListener('click', (e) => {
+			e.target.classList.add('active');
+		});
+		span.addEventListener('animationend', (e) => {
+			e.target.classList.remove('active');
+		});
+
+		// Initial animation
+		setTimeout(() => {
+			span.classList.add('active');
+		}, 750 * (idx + 1));
+	});
+
 	return (
 		<main className='login-form'>
+			<br />
+			<div class='tooly-header'>
+				<span>t</span>
+				<span>o</span>
+				<span>o</span>
+				<span>l</span>
+				<span>y</span>
+				<span>🔨</span>
+			</div>
 			<form onSubmit={handleSubmit}>
 				<ul className='login-ul'>
 					<li className='login-li'>
@@ -53,12 +80,14 @@ function SignIn(props) {
 						<button className='login-button' type='submit'>
 							Log In
 						</button>
+						<Link to='/signup' className='links'>
+							<button className='sign-up-button'>Sign Up</button>
+						</Link>
 					</li>
+					<h4 style={{ color: 'gray' }}>find tools to rent close to home!</h4>
+					<br />
 				</ul>
 			</form>
-			<Link to='/signup' className='links'>
-				<button className='sign-up-button'>Sign Up</button>
-			</Link>
 		</main>
 	);
 }

@@ -8,6 +8,9 @@
 	display: flex;
 }
 
+.navTitle {
+	font-weight: 800;
+}
 .navTitle,
 .navBar {
 	display: flex;

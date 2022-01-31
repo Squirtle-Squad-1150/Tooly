@@ -7,7 +7,7 @@ const Header = () => {
 			<nav className='navBar'>
 				<Link to='/toolcard' className='links'>
 					<h1 className='navTitle'>
-						Tooly &nbsp;
+						tooly &nbsp;
 						<span role='img' aria-label='hammer and wrench'>
 							🛠️
 						</span>
@@ -23,7 +23,7 @@ const Header = () => {
 						</li>
 						<li className='navLi'>
 							{' '}
-							<Link to='/add-listing' className='links' >
+							<Link to='/add-listing' className='links'>
 								Add Listing
 							</Link>
 						</li>
