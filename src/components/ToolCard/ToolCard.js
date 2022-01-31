@@ -4,9 +4,8 @@ import { Link } from 'react-router-dom';
 import UpdateTool from '../UpdateTool/UpdateTool';
 
 function ToolCard({ tools }) {
-	
 	if (!tools) return <div></div>;
-	
+
 	return (
 		<section className='container'>
 			{tools.map((tool) => (
@@ -22,7 +21,6 @@ function ToolCard({ tools }) {
 							<h3>
 								{tool.tool} ({tool.brand})
 							</h3>
-							<h4>per hour: ${tool.price}</h4>
 						</div>
 						<div className='cardBtns'>
 							<Link to={`/update-listing/${tool._id}`} className='links'>
