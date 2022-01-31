@@ -40,8 +40,8 @@ function ToolCardDetail() {
 				<h3>Price per hour: </h3>
 				<p>${tool.price}</p>
 
+				<h3>Reserved dates</h3>
 				<div className='dates'>
-					<h3>Reserved dates</h3>
 					{tool.reserve.map((nested) => (
 						<div>
 							{nested.map((el) => (
@@ -55,7 +55,7 @@ function ToolCardDetail() {
 					))}
 				</div>
 				<div className='cardBtns'>
-					<Link to='/update-listing/:_id' className='links'>
+					<Link to={`/update-listing/${tool._id}`} className='links'>
 						<button className='updateBtn'>Update</button>
 					</Link>
 					<Link to={`/reserve-listing/${tool._id}`} className='links'>
