@@ -35,10 +35,13 @@ function ToolCardDetail() {
 			<div className='cardDetail'>
 				<h2>{tool.tool}</h2>
 				<img src={tool.image} alt={tool.title} />
-				<h3>Description</h3>
+				<h3>Located in: {tool.location}</h3>
 				<p>{tool.description}</p>
-				<h3>Price per hour: </h3>
-				<p>${tool.price}</p>
+				<p>Condition: {tool.condition}</p>
+				<p>Cordless: {tool.cordless}</p>
+				<p>Available: {tool.available}</p>
+
+				<h3>Price per hour: ${tool.price}</h3>
 
 				<h3>Reserved dates</h3>
 				<div className='dates'>
