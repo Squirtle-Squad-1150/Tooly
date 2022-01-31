@@ -13,7 +13,7 @@ function ToolCardDetail() {
 		fetch(url)
 			.then((res) => res.json())
 			.then((res) => {
-				console.log(res);
+				console.log(res.reserve[0][0].day);
 				setTool(res);
 			})
 			.catch(console.error);
@@ -28,6 +28,7 @@ function ToolCardDetail() {
 	if (!tool) {
 		return <p>Loading tool information ...</p>;
 	}
+	// array.map(nested => nested.map(element => element * 2));
 
 	return (
 		<div className='tool-card'>
@@ -35,6 +36,29 @@ function ToolCardDetail() {
 				<h2>{tool.tool}</h2>
 				<img src={tool.image} alt={tool.title} />
 				<p>{tool.description}</p>
+				{/* {tool.reserve.map((date) => (
+					<ul>
+						<li>{date.year}</li>
+						<li>{date.month}</li>
+						<li>{date.date}</li>
+					</ul>
+				))} */}
+
+				<div className='dates'>
+					{tool.reserve.map((nested) => (
+						<div>
+							{nested.map((el) => (
+								<ul>
+									<li>
+										{el.month}/
+										{el.day}/
+										{el.year}
+									</li>
+								</ul>
+							))}
+						</div>
+					))}
+				</div>
 				<div className='cardBtns'>
 					<Link to='/update-listing/:_id' className='links'>
 						<button className='updateBtn'>Update</button>
