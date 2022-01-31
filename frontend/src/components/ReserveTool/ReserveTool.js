@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import 'react-modern-calendar-datepicker/lib/DatePicker.css';
 import DatePicker, { Calendar } from 'react-modern-calendar-datepicker';
 import { useParams, useNavigate } from 'react-router-dom';
+import './reserveTool.css';
 import axios from 'axios';
 
 function ReserveTool() {
@@ -49,7 +50,7 @@ function ReserveTool() {
 			.put(`https://cryptic-dusk-16798.herokuapp.com/listing/${_id}`, tool)
 			.then((res) => {
 				console.log(res);
-				navigate('/');
+				navigate('/toolcard');
 			});
 	}
 
@@ -62,13 +63,21 @@ function ReserveTool() {
 	}
 
 	return (
-		<form>
-			<Calendar
-				value={selectedDayRange}
-				onChange={setSelectedDayRange}
-				// disabledDays={disabledDays}
-			/>
-			<button onClick={handleSubmit}>Submit</button>
+		<form className='calendar-form'>
+			<div className='calendar'>
+				<h4>Choose the dates you would like to reserve this tool.</h4>
+				<Calendar
+					value={selectedDayRange}
+					onChange={setSelectedDayRange}
+
+					// disabledDays={disabledDays}
+				/>
+				<div>
+					<button classname='submit-calendar' onClick={handleSubmit}>
+						Submit
+					</button>
+				</div>
+			</div>
 		</form>
 	);
 }
