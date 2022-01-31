@@ -13,7 +13,7 @@ function ToolCardDetail() {
 		fetch(url)
 			.then((res) => res.json())
 			.then((res) => {
-				console.log(res.reserve[0][0].day);
+				// console.log(res.reserve[0][0].day);
 				setTool(res);
 			})
 			.catch(console.error);
@@ -35,24 +35,19 @@ function ToolCardDetail() {
 			<div className='cardDetail'>
 				<h2>{tool.tool}</h2>
 				<img src={tool.image} alt={tool.title} />
+				<h3>Description</h3>
 				<p>{tool.description}</p>
-				{/* {tool.reserve.map((date) => (
-					<ul>
-						<li>{date.year}</li>
-						<li>{date.month}</li>
-						<li>{date.date}</li>
-					</ul>
-				))} */}
+				<h3>Price per hour: </h3>
+				<p>${tool.price}</p>
 
 				<div className='dates'>
+					<h3>Reserved dates</h3>
 					{tool.reserve.map((nested) => (
 						<div>
 							{nested.map((el) => (
 								<ul>
 									<li>
-										{el.month}/
-										{el.day}/
-										{el.year}
+										{el.month}/{el.day}/{el.year}
 									</li>
 								</ul>
 							))}

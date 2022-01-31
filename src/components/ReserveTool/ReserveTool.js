@@ -45,7 +45,7 @@ function ReserveTool() {
 		axios
 			.put(`https://cryptic-dusk-16798.herokuapp.com/listing/${_id}`, tool)
 			.then((res) => {
-				navigate('/');
+				navigate(`/toolcard/${_id}`);
 			});
 	}
 

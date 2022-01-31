@@ -22,6 +22,7 @@ function ToolCard({ tools }) {
 							<h3>
 								{tool.tool} ({tool.brand})
 							</h3>
+							<h4>per hour: ${tool.price}</h4>
 						</div>
 						<div className='cardBtns'>
 							<Link to={`/update-listing/${tool._id}`} className='links'>
