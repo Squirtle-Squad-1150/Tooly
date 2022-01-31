@@ -1,0 +1,32 @@
+.header-nav {
+	background-color: #276074;
+}
+
+.navUl {
+	padding-right: 30px;
+	list-style-type: none;
+	display: flex;
+}
+
+.navTitle {
+	font-weight: 800;
+}
+.navTitle,
+.navBar {
+	display: flex;
+	color: lightgray;
+	justify-content: space-between;
+}
+
+.navLi {
+	padding: 10px;
+}
+
+a {
+	text-decoration: none;
+	color: lightgray;
+}
+
+.header-nav {
+	padding-left: 20px;
+}

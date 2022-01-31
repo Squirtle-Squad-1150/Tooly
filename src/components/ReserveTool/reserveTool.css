@@ -1,0 +1,12 @@
+.calendar-form {
+	display: flex;
+	justify-content: center;
+	background-color: #276074;
+}
+
+.calendar {
+	margin: 20px;
+	padding: 10px;
+	position: relative;
+	color: lightgray;
+}
