@@ -222,9 +222,9 @@ function UpdateTool(props) {
 							id='url'
 							type='url'
 							min='1'
-							value={formData.url}
+							value={formData.image}
 							onChange={(event) =>
-								setFormData({ ...formData, url: event.target.value })
+								setFormData({ ...formData, image: event.target.value })
 							}></input>
 					</li>
 					<li className='form-li'>
