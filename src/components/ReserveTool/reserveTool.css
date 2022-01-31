@@ -12,8 +12,8 @@
 	text-align: center;
 }
 
-.submit-calendar{
-	display: none;
+#reserve-button{
+	display: block;
 	width: 82%;
 	padding:0.3em 1.2em;
 	margin:0 0.3em 0.3em 0;
@@ -24,10 +24,11 @@
 	font-weight:300;
 	color: black;
 	background-color:white;
-	text-align:center;
+	text-align: center;
 	transition: all 0.2s;
 }
 
 .submit-calendar:hover{
 	background-color:#4095c6;
+	color: white;
 }

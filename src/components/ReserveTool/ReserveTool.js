@@ -69,7 +69,10 @@ function ReserveTool() {
 					// disabledDays={disabledDays}
 				/>
 				<div>
-					<button classname='submit-calendar' onClick={handleSubmit}>
+					<button
+						classname='submit-calendar'
+						id='reserve-button'
+						onClick={handleSubmit}>
 						Submit
 					</button>
 				</div>
